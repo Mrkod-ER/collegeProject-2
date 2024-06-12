@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Profile Page</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    background-color: #380e77;
+    color: white;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    margin: 20px;
+}
+
+.left-section, .right-section {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-section .day-sleep {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.right-section h2 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.chart-area {
+    height: 400px;
+    background-color: #e0e0e0;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>WELCOME TO YOUR PROFILE</h1>
+    </div>
+    <div class="container">
+        <div class="left-section">
+            <ul class="nav nav-tabs">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/test">Enter new Sleep Data</a></li>
+                    <li><a class="dropdown-item" href="/">Enter new user</a></li>
+                    <!-- <li><a class="dropdown-item" href="/assign">Assign Leave</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/">Display status</a></li> -->
+                  </ul>
+              </ul>
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+              <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Data And Day</th>
+                    <th scope="col">Start-Time</th>
+                    <th scope="col">End-Time</th>
+                    <!-- <th scope="col">Sleep Duration</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if(record.length >0) {%>
+                    <% record.forEach(function(element){ %>
+                      <tr>
+                        <th scope="row">-></th>
+                        <td><%= element.date %></td>
+                        <td><%= element.startTime %></td>
+                        <td><%= element.endTime %></td>
+
+                      </tr>
+                    <tr>
+                   <% }) %>
+                   <% } %>
+                </tbody>
+               </table>
+        </div>
+        <!-- <div class="right-section">
+            <h2>Weekly Graphical Analysis</h2>
+            <div class="chart-area">
+                Chart -->
+            <!-- </div>
+        </div> -->
+    </div>
+</body>
+</html>

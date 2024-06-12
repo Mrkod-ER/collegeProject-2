@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    background: linear-gradient(to right, #000000, #4B0082);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.container {
+    background: #1c1c1c;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    width: 90%;
+    max-width: 600px;
+}
+
+
+header {
+    background: #4B0082;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+main {
+    padding: 2rem;
+}
+
+
+h2 {
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #b0b0b0;
+}
+
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    background: #333;
+    color: #fff;
+}
+
+
+button {
+    background: #4B0082;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.75rem;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+button:hover {
+    background: #6a0dad;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 1rem;
+    width: 100%;
+    background: #2e2e2e;
+}
+
+
+th, td {
+    border: 1px solid #4B0082;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background: #4B0082;
+    color: #fff;
+}
+
+
+tbody tr:nth-child(odd) {
+    background: #3c3c3c;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); 
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sleep Tracker</h1>
+        </header>
+        <main>
+            <section class="form-section">
+                <h2>Track Your Sleep</h2>
+                <form id="sleep-form" method="post" action="/test">
+
+                    <label for="name">Name</label>
+                    <input type="text" name="name" required>
+                    
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                    
+                    <label for="start-time">Start Time:</label>
+                    <input type="time" id="start-time" name="startTime" required>
+                    
+                    <label for="end-time">End Time:</label>
+                    <input type="time" id="end-time" name="endTime" required>
+                    
+                    <button type="submit">Add Sleep Data</button>
+                </form>
+            </section>
+            <section class="data-section">
+                <br>
+                <br>
+    
+            </section>
+        </main>
+    </div>
+</body>
+</html>
