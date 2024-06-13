@@ -3,7 +3,7 @@ const path = require("path");
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const app= express();
-mongoose.connect("mongodb://localhost:27017/userdata");
+mongoose.connect("mongodb+srv://rohitgurjarkhari:N1l6WJ6fVA1G5utA@userdata.g0d0lxb.mongodb.net/?retryWrites=true&w=majority&appName=userdata");
 const User = require("./users")
 
 
@@ -35,13 +35,13 @@ app.post("/", async(req,res)=>{
     }
 })
 
-app.get("/login/:name",(req,res)=>{
+app.get("/login",(req,res)=>{
     res.render("login");
 });
 
-app.post("/login/:name", async(req,res)=>{
-    const check = await User.findOne({name: req.body.name });
-    const name = req.body.name; 
+app.post("/login", async(req,res)=>{
+    const check = await User.findOne({name: req.body.name }); 
+    const name = req.body.name;
     if(!check){
         res.send("User name cannot found");
     }
@@ -61,6 +61,7 @@ app.post("/test",async(req,res)=>{
     const find = await User.findOne({name: req.body.name});
     const data = req.body;
     const ans = find.date;
+    const name = req.body.name; 
     if(!ans){
     const result = await User.updateOne({
         name: req.body.name
@@ -75,7 +76,7 @@ app.post("/test",async(req,res)=>{
 else{
     const result = await User.insertMany(data);
 }
-    res.redirect("/status/:name");
+    res.redirect(`/status/${name}`);
 })
 
 app.get('/status/:name', async (req,res)=>{
